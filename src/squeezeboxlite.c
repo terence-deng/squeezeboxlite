@@ -18,7 +18,7 @@
  *
  */
 
-#include "squeezelite.h"
+#include "lib/squeezelite.h"
 
 #include <signal.h>
 

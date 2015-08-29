@@ -1,0 +1,25 @@
+*~
+# autotools
+Makefile
+*.lo
+*.in
+.deps
+.libs
+*.la
+*.a
+*.o
+aclocal.m4
+autom4te.cache
+autoscan-*.log
+compile
+config.*
+configure
+configure.scan
+depcomp
+install-sh
+libtool
+ltmain.sh
+m4/
+missing
+src/squeezeboxlite
+stamp-h1

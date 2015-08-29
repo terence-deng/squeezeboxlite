@@ -1,0 +1,13 @@
+Squeezelite - lightweight headless squeezebox emulator
+
+HOWTO - Compile
+===============
+$ ./autogen.sh
+$ ./configure
+$ make
+
+HOWTO - Install
+===============
+switch to root and install
+$ su - root
+# make install
