@@ -135,3 +135,10 @@ Features
 - support for basic IR input using LIRC on Linux
 - support for volume adjustment or unmuting of alsa mixer
 - support for inverting output polarity via LMS setting (requires recent 7.9 server)
+
+Version 1.8.1 29/8/15
+==================
+
+Minor changes
+- Use automake to generate the Makefile
+
