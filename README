@@ -1,5 +1,8 @@
 Squeezelite - lightweight headless squeezebox emulator
 
+# apt-get install autoconf automake libtool
+# apt-get install libao-dev libasound2-dev libfaad-dev libflac-dev libmad0-dev libmpg123-dev libvorbis-dev
+
 HOWTO - Compile
 ===============
 $ ./autogen.sh

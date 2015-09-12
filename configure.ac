@@ -67,7 +67,7 @@ AM_CONDITIONAL([OS_GNU],[test "$os_gnu" = "yes"])
 AM_CONDITIONAL([OS_FREEBSD],[test "$os_freebsd" = "yes"])
 
 # Custom check for libportaudio
-PKG_CHECK_MODULES([libportaudio], [portaudio-2.0 >= 0.28], [have_libportaudio=1], [have_libportaudio=0])
+PKG_CHECK_MODULES([libportaudio], ["portaudio-2.0" >= 0.28], [have_libportaudio=1], [have_libportaudio=0])
 AM_CONDITIONAL([HAVE_LIBPORTAUDIO], [test "$have_libportaudio" -eq 1])
 
 
