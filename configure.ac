@@ -15,9 +15,21 @@ AC_PROG_LIBTOOL
 # Checks for libraries.
 LT_LIB_M
 AC_CHECK_LIB([pthread],[pthread_create])
+AC_CHECK_LIB([asound], [snd_pcm_open], [have_libasound=1], [have_libasound=0])
+AC_CHECK_LIB([faad],[NeAACDecOpen])
+AC_CHECK_LIB([FLAC],[FLAC__stream_decoder_init_stream])
+AC_CHECK_LIB([mad],[mad_decoder_run])
+AC_CHECK_LIB([mpg123],[mpg123_init])
+AC_CHECK_LIB([portaudio], [Pa_Initialize], [have_portaudio=1], [have_portaudio=0])
 
 # Checks for header files.
 AC_CHECK_HEADERS(arpa/inet.h fcntl.h limits.h malloc.h netdb.h netinet/in.h stddef.h stdlib.h string.h sys/ioctl.h sys/socket.h sys/time.h unistd.h)
+AC_CHECK_HEADERS(alsa/asoundlib.h)
+AC_CHECK_HEADERS([neaacdec.h],[],AC_MSG_ERROR([neaacdec.h not found]))
+AC_CHECK_HEADERS([FLAC/stream_decoder.h],[],AC_MSG_ERROR([FLAC/stream_decoder.h not found]))
+AC_CHECK_HEADERS([mad.h],[],AC_MSG_ERROR([mad.h not found]))
+AC_CHECK_HEADERS([mpg123.h],[],AC_MSG_ERROR([mpg123.h not found]))
+AC_CHECK_HEADERS([vorbis/vorbisfile.h],[],AC_MSG_ERROR([vorbis/vorbisfile.h not found]))
 
 # Checks for typedefs, structures, and compiler characteristics.
 
@@ -67,8 +79,7 @@ AM_CONDITIONAL([OS_GNU],[test "$os_gnu" = "yes"])
 AM_CONDITIONAL([OS_FREEBSD],[test "$os_freebsd" = "yes"])
 
 # Custom check for libportaudio
-PKG_CHECK_MODULES([libportaudio], ["portaudio-2.0" >= 0.28], [have_libportaudio=1], [have_libportaudio=0])
-AM_CONDITIONAL([HAVE_LIBPORTAUDIO], [test "$have_libportaudio" -eq 1])
+AM_CONDITIONAL([HAVE_PORTAUDIO], [test "$have_portaudio" -eq 1])
 
 
 AC_OUTPUT(Makefile

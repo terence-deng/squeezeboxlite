@@ -4,7 +4,13 @@ AM_CPPFLAGS = -I/usr/local/include
 AM_LDFLAGS = -I/usr/local/lib 
 
 lib_LTLIBRARIES = libsqueezeboxlite.la
-libsqueezeboxlite_la_SOURCES = buffer.c decode.c dop.c dsd.c faad.c ffmpeg.c flac.c ir.c mad.c mpg.c output.c output_alsa.c output_pa.c output_pack.c output_stdout.c output_vis.c pcm.c process.c resample.c slimproto.c stream.c utils.c vorbis.c
+libsqueezeboxlite_la_SOURCES = buffer.c dop.c dsd.c ffmpeg.c ir.c output.c output_alsa.c output_pa.c output_pack.c output_stdout.c output_vis.c pcm.c process.c resample.c slimproto.c stream.c utils.c
+
+libsqueezeboxlite_la_SOURCES += faad.c
+libsqueezeboxlite_la_SOURCES += flac.c
+libsqueezeboxlite_la_SOURCES += decode.c mad.c
+libsqueezeboxlite_la_SOURCES += mpg.c
+libsqueezeboxlite_la_SOURCES += vorbis.c
 libsqueezeboxlite_la_CPPFLAGS = $(AM_CPPFLAGS)
 
 # This library depends on 3rd party libraries
@@ -29,8 +35,8 @@ libsqueezeboxlite_la_LDFLAGS = -no-undefined -version-info 0:0:0
 libsqueezeboxlite_la_LIBADD += $(LIBADD_DLOPEN)
 libsqueezeboxlite_la_LIBADD += $(LIBM)
 
-if HAVE_LIBPORTAUDIO
-libsqueezeboxlite_la_LDFLAGS += $(libportaudio_LIBS)
+if HAVE_PORTAUDIO
+libsqueezeboxlite_la_LDFLAGS += -lportaudio
 endif
 
 if OS_LINUX
