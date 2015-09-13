@@ -18,15 +18,17 @@ lightweight headless squeezebox emulator
 ###GNU/Linux - Debian
 
 ``Bash
-apt-get install autoconf automake libtool
-apt-get install libao-dev libasound2-dev libfaad-dev libflac-dev libmad0-dev libmpg123-dev libvorbis-dev
+# apt-get install autoconf automake libtool
+# apt-get install libao-dev libasound2-dev libfaad-dev libflac-dev libmad0-dev libmpg123-dev libvorbis-dev
+``
 
 <a name="setup-bsd"/>
 ###BSD - FreeBSD
 
 ``Bash
-pkg install autoconf automake libtool gmake
-pkg install faad2 flac libmad mpg123 libvorbis portaudio
+# pkg install autoconf automake libtool gmake
+# pkg install faad2 flac libmad mpg123 libvorbis portaudio
+``
 
 <a name="compile"/>
 ##HOWTO - Compile
@@ -35,22 +37,25 @@ pkg install faad2 flac libmad mpg123 libvorbis portaudio
 ###GNU/Linux - Debian
 
 ``Bash
-./autogen.sh
-./configure
-make
+$ ./autogen.sh
+$ ./configure
+$ make
+``
 
 <a name="compile-bsd"/>
 ###BSD - FreeBSD
  
 ``Bash
-./autogen.sh
-CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" ./configure
-make
+$ ./autogen.sh
+$ CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" ./configure
+$ make
+``
 
 <a name="install"/>
 ##HOWTO - Install
 
 switch to root and install
 ``Bash
-su - root
-make install
+$ su - root
+# make install
+``
